@@ -1,6 +1,8 @@
 #ifndef TREE_H_
 #define TREE_H_
 
+#include <stdlib.h>
+
 enum NodeType
 {
     NODE_OPERATION,
@@ -30,6 +32,8 @@ struct TreeNode
 
     TreeNode* left;
     TreeNode* right;
+
+    TreeNode* parent;
 };
 
 struct Tree
@@ -40,7 +44,9 @@ struct Tree
 
 Tree* CreateTree();
 void TreeDestroy(Tree* tree);
-TreeNode* CreateNode(NodeType type, NodeValue value);
+TreeNode* CreateNode(NodeType type, NodeValue value, 
+                     TreeNode* left = NULL, TreeNode* right = NULL, TreeNode* parent = NULL);
 void LoadTree(Tree* tree, const char* filename);
+TreeNode* CopyNode(TreeNode* node);
 
 #endif // TREE_H_

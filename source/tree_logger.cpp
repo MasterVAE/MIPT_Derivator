@@ -17,7 +17,7 @@ static void DotPrintValue(TreeNode* node, FILE* file);
 
 static const size_t BUFFER_SIZE = 128;
 
-void TreeDotDump(Tree* tree)
+void TreeDotDump(Tree* tree, const char* tree_image)
 {
     assert(tree);
 
@@ -30,7 +30,7 @@ void TreeDotDump(Tree* tree)
     fclose(file);
 
     char command[BUFFER_SIZE] = {};
-    snprintf(command, BUFFER_SIZE, "dot -Tpng %s -o files/tree.png", DOT_FILENAME);
+    snprintf(command, BUFFER_SIZE, "dot -Tpng %s -o %s", DOT_FILENAME, tree_image);
     system(command);
 }
 
@@ -46,6 +46,8 @@ static void DotPrintNode(TreeNode* node, FILE* file, int rank)
     fprintf(file, "\trank=%d;                                              \n", rank);
     fprintf(file, "\tfillcolor=lavender;                                   \n");
     fprintf(file, "\t\"%p_address\"[label=\"%p\",fillcolor=\"lavender\"];  \n", node, node);
+    fprintf(file, "\t\"%p_parent\"[label=\"prnt: %p\","    
+                                                "fillcolor=\"lavender\"];  \n", node, node->parent);
 
     DotPrintValue(node, file);
 
@@ -59,7 +61,8 @@ static void DotPrintNode(TreeNode* node, FILE* file, int rank)
     fprintf(file, "\t\t\"%p_right\"[label=\"%p\",fillcolor=\"lightgreen\"];\n", node, node->right);}
     
     fprintf(file, "\t}                                                     \n");
-    fprintf(file, "\t\"%p_address\"->\"%p_value\"[style=invis,weight=10];  \n", node, node);
+    fprintf(file, "\t\"%p_address\"->\"%p_parent\"[style=invis,weight=10]; \n", node, node);
+    fprintf(file, "\t\"%p_parent\"->\"%p_value\"[style=invis,weight=10];   \n", node, node);
     
     if(node->left) {
     fprintf(file, "\t\"%p_value\"->\"%p_left\"[style=invis,weight=10];     \n", node, node);}
@@ -134,16 +137,15 @@ static void DotPrintValue(TreeNode* node, FILE* file)
 }
 
 
-void TreeTexDump(Tree* tree)
+void TreeTexDump(Tree* tree, const char* tree_tex)
 {
     assert(tree);
 
-    FILE* file = fopen(TEX_FILENAME, "w+");
+    FILE* file = fopen(tree_tex, "w+");
     assert(file);
 
-    fprintf(file, "$");
     TexPrintNode(tree->root, file);
-    fprintf(file, "$");
+    fprintf(file, "\\\\");
 }
 
 static void TexPrintNode(TreeNode* node, FILE* file)

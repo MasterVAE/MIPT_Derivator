@@ -5,7 +5,7 @@
 
 #include "tree.h"
 
-static TreeNode* LoadNode(char** buffer);
+static TreeNode* LoadNode(char** buffer, TreeNode* parent = NULL);
 static void NodeDestroy(TreeNode* node);
 static size_t FileLength(FILE* file);
 static size_t Scan(const char* source, char* dest);
@@ -36,14 +36,17 @@ static void NodeDestroy(TreeNode* node)
     free(node);
 }
 
-TreeNode* CreateNode(NodeType type, NodeValue value)
+TreeNode* CreateNode(NodeType type, NodeValue value, 
+                                    TreeNode* left, TreeNode* right, TreeNode* parent)
 {
     TreeNode* node = (TreeNode*)calloc(1, sizeof(TreeNode));
     node->type = type;
     node->value = value;
 
-    node->left = NULL;
-    node->right = NULL;
+    node->left = left;
+    node->right = right;
+
+    node->parent = parent;
 
     return node;
 }
@@ -77,9 +80,10 @@ void LoadTree(Tree* tree, const char* filename)
     free(buffer_start);
 }
 
-static TreeNode* LoadNode(char** buffer)
+static TreeNode* LoadNode(char** buffer, TreeNode* parent)
 {
     assert(buffer);
+    assert(*buffer);
 
     (*buffer)++;
     char c = *buffer[0];
@@ -93,53 +97,40 @@ static TreeNode* LoadNode(char** buffer)
             char operation = *buffer[0];
 
             TreeNode* node;
-
+            NodeValue value;
             switch (operation)
             {
                 case '+':
                 {
-                    NodeValue value;
                     value.operation = OP_ADD;
-                    node = CreateNode(NODE_OPERATION, value);
-
                     break;
                 }
                 case '-':
                 {
-                    NodeValue value;
                     value.operation = OP_SUB;
-                    node = CreateNode(NODE_OPERATION, value);
-
                     break;
                 }
                 case '*':
                 {
-                    NodeValue value;
                     value.operation = OP_MUL;
-                    node = CreateNode(NODE_OPERATION, value);
-
                     break;
                 }
                 case '/':
                 {
-                    NodeValue value;
                     value.operation = OP_DIV;
-                    node = CreateNode(NODE_OPERATION, value);
-
                     break;
                 }
                 default:
-                    return NULL;
+                    return NULL; 
             }
+
+            node = CreateNode(NODE_OPERATION, value, NULL, NULL, parent);
 
             (*buffer)++;
             if((*buffer)[0] == ')') return node;
 
-            node->left = LoadNode(buffer);
-
-            *buffer = strchr(*buffer + 1, '(');
-
-            node->right = LoadNode(buffer);
+            node->left = LoadNode(buffer, node);       
+            node->right = LoadNode(buffer, node);
 
             (*buffer)++;
             return node;
@@ -149,20 +140,11 @@ static TreeNode* LoadNode(char** buffer)
             (*buffer)++;
             char variable = *buffer[0];
 
-            NodeValue value;
-            value.variable = variable;
-            TreeNode* node = CreateNode(NODE_VARIABLE, value);
+            TreeNode* node = CreateNode(NODE_VARIABLE, (NodeValue){.variable = variable}, 
+                                                        NULL, NULL, parent);
 
-            (*buffer)++;
-            if((*buffer)[0] == ')') return node;
+            *buffer += 2;
 
-            node->left = LoadNode(buffer);
-
-            *buffer = strchr(*buffer + 1, '(');
-
-            node->right = LoadNode(buffer);
-
-            (*buffer)++;
             return node;
         }
         case 'C':
@@ -175,16 +157,9 @@ static TreeNode* LoadNode(char** buffer)
             NodeValue value;
             sscanf(number_str, "%lg", &value.constant);
 
-            TreeNode* node = CreateNode(NODE_CONSTANT, value);
+            TreeNode* node = CreateNode(NODE_CONSTANT, value, NULL, NULL, parent);
 
             *buffer += scanned_count;
-            if((*buffer)[0] == ')') return node;
-
-            node->left = LoadNode(buffer);
-
-            *buffer = strchr(*buffer + 1, '(');
-
-            node->right = LoadNode(buffer);
 
             (*buffer)++;
             return node;
@@ -218,4 +193,11 @@ static size_t Scan(const char* source, char* dest)
     dest[i] = '\0';
 
     return i;
+}
+
+TreeNode* CopyNode(TreeNode* node)
+{
+    if(!node) return NULL;
+
+    return CreateNode(node->type, node->value, CopyNode(node->left), CopyNode(node->right));
 }

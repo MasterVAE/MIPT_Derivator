@@ -1,112 +1,486 @@
 digraph G {	 node [shape=plaintext, style="filled"];
 	 rankdir=TB;
-subgraph cluster_0x7bdd005e0070                                     
+subgraph cluster_0x7b556b3e0910                                     
 {                                                       
 	style=filled;                                         
 	rank=0;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e0070_address"[label="0x7bdd005e0070",fillcolor="lavender"];  
-	"0x7bdd005e0070_value"[label="+",fillcolor="lavender"];  
-	subgraph "0x7bdd005e0070_bottom"                                
+	"0x7b556b3e0910_address"[label="0x7b556b3e0910",fillcolor="lavender"];  
+	"0x7b556b3e0910_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0910_value"[label="+",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0910_bottom"                                
 	{                                                     
 		 style=invis;                                       
-		"0x7bdd005e0070_left"[label="0x7bdd005e00a0",fillcolor="coral"];      
-		"0x7bdd005e0070_right"[label="0x7bdd005e0130",fillcolor="lightgreen"];
+		"0x7b556b3e0910_left"[label="0x7b556b3e08d0",fillcolor="coral"];      
+		"0x7b556b3e0910_right"[label="0x7b556b3e0710",fillcolor="lightgreen"];
 	}                                                     
-	"0x7bdd005e0070_address"->"0x7bdd005e0070_value"[style=invis,weight=10];  
-	"0x7bdd005e0070_value"->"0x7bdd005e0070_left"[style=invis,weight=10];     
-	"0x7bdd005e0070_value"->"0x7bdd005e0070_right"[style=invis,weight=10];    
+	"0x7b556b3e0910_address"->"0x7b556b3e0910_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0910_parent"->"0x7b556b3e0910_value"[style=invis,weight=10];   
+	"0x7b556b3e0910_value"->"0x7b556b3e0910_left"[style=invis,weight=10];     
+	"0x7b556b3e0910_value"->"0x7b556b3e0910_right"[style=invis,weight=10];    
 }                                                       
-"0x7bdd005e0070_left" -> "0x7bdd005e00a0_address";
-subgraph cluster_0x7bdd005e00a0                                     
+"0x7b556b3e0910_left" -> "0x7b556b3e08d0_address";
+subgraph cluster_0x7b556b3e08d0                                     
 {                                                       
 	style=filled;                                         
 	rank=1;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e00a0_address"[label="0x7bdd005e00a0",fillcolor="lavender"];  
-	"0x7bdd005e00a0_value"[label="*",fillcolor="lavender"];  
-	subgraph "0x7bdd005e00a0_bottom"                                
+	"0x7b556b3e08d0_address"[label="0x7b556b3e08d0",fillcolor="lavender"];  
+	"0x7b556b3e08d0_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e08d0_value"[label="+",fillcolor="lavender"];  
+	subgraph "0x7b556b3e08d0_bottom"                                
 	{                                                     
 		 style=invis;                                       
-		"0x7bdd005e00a0_left"[label="0x7bdd005e00d0",fillcolor="coral"];      
-		"0x7bdd005e00a0_right"[label="0x7bdd005e0100",fillcolor="lightgreen"];
+		"0x7b556b3e08d0_left"[label="0x7b556b3e0890",fillcolor="coral"];      
+		"0x7b556b3e08d0_right"[label="0x7b556b3e07d0",fillcolor="lightgreen"];
 	}                                                     
-	"0x7bdd005e00a0_address"->"0x7bdd005e00a0_value"[style=invis,weight=10];  
-	"0x7bdd005e00a0_value"->"0x7bdd005e00a0_left"[style=invis,weight=10];     
-	"0x7bdd005e00a0_value"->"0x7bdd005e00a0_right"[style=invis,weight=10];    
+	"0x7b556b3e08d0_address"->"0x7b556b3e08d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e08d0_parent"->"0x7b556b3e08d0_value"[style=invis,weight=10];   
+	"0x7b556b3e08d0_value"->"0x7b556b3e08d0_left"[style=invis,weight=10];     
+	"0x7b556b3e08d0_value"->"0x7b556b3e08d0_right"[style=invis,weight=10];    
 }                                                       
-"0x7bdd005e00a0_left" -> "0x7bdd005e00d0_address";
-subgraph cluster_0x7bdd005e00d0                                     
+"0x7b556b3e08d0_left" -> "0x7b556b3e0890_address";
+subgraph cluster_0x7b556b3e0890                                     
 {                                                       
 	style=filled;                                         
 	rank=2;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e00d0_address"[label="0x7bdd005e00d0",fillcolor="lavender"];  
-	"0x7bdd005e00d0_value"[label="X",fillcolor="lavender"];  
-	subgraph "0x7bdd005e00d0_bottom"                                
+	"0x7b556b3e0890_address"[label="0x7b556b3e0890",fillcolor="lavender"];  
+	"0x7b556b3e0890_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e0890_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0890_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0890_left"[label="0x7b556b3e0850",fillcolor="coral"];      
+		"0x7b556b3e0890_right"[label="0x7b556b3e0810",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0890_address"->"0x7b556b3e0890_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0890_parent"->"0x7b556b3e0890_value"[style=invis,weight=10];   
+	"0x7b556b3e0890_value"->"0x7b556b3e0890_left"[style=invis,weight=10];     
+	"0x7b556b3e0890_value"->"0x7b556b3e0890_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0890_left" -> "0x7b556b3e0850_address";
+subgraph cluster_0x7b556b3e0850                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0850_address"[label="0x7b556b3e0850",fillcolor="lavender"];  
+	"0x7b556b3e0850_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0850_value"[label="88.7",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0850_bottom"                                
 	{                                                     
 		 style=invis;                                       
 	}                                                     
-	"0x7bdd005e00d0_address"->"0x7bdd005e00d0_value"[style=invis,weight=10];  
+	"0x7b556b3e0850_address"->"0x7b556b3e0850_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0850_parent"->"0x7b556b3e0850_value"[style=invis,weight=10];   
 }                                                       
-"0x7bdd005e00a0_right" -> "0x7bdd005e0100_address";
-subgraph cluster_0x7bdd005e0100                                     
+"0x7b556b3e0890_right" -> "0x7b556b3e0810_address";
+subgraph cluster_0x7b556b3e0810                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0810_address"[label="0x7b556b3e0810",fillcolor="lavender"];  
+	"0x7b556b3e0810_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0810_value"[label="1",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0810_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0810_address"->"0x7b556b3e0810_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0810_parent"->"0x7b556b3e0810_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e08d0_right" -> "0x7b556b3e07d0_address";
+subgraph cluster_0x7b556b3e07d0                                     
 {                                                       
 	style=filled;                                         
 	rank=2;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e0100_address"[label="0x7bdd005e0100",fillcolor="lavender"];  
-	"0x7bdd005e0100_value"[label="88.7",fillcolor="lavender"];  
-	subgraph "0x7bdd005e0100_bottom"                                
+	"0x7b556b3e07d0_address"[label="0x7b556b3e07d0",fillcolor="lavender"];  
+	"0x7b556b3e07d0_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e07d0_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e07d0_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e07d0_left"[label="0x7b556b3e0790",fillcolor="coral"];      
+		"0x7b556b3e07d0_right"[label="0x7b556b3e0750",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e07d0_address"->"0x7b556b3e07d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e07d0_parent"->"0x7b556b3e07d0_value"[style=invis,weight=10];   
+	"0x7b556b3e07d0_value"->"0x7b556b3e07d0_left"[style=invis,weight=10];     
+	"0x7b556b3e07d0_value"->"0x7b556b3e07d0_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e07d0_left" -> "0x7b556b3e0790_address";
+subgraph cluster_0x7b556b3e0790                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0790_address"[label="0x7b556b3e0790",fillcolor="lavender"];  
+	"0x7b556b3e0790_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0790_value"[label="X",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0790_bottom"                                
 	{                                                     
 		 style=invis;                                       
 	}                                                     
-	"0x7bdd005e0100_address"->"0x7bdd005e0100_value"[style=invis,weight=10];  
+	"0x7b556b3e0790_address"->"0x7b556b3e0790_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0790_parent"->"0x7b556b3e0790_value"[style=invis,weight=10];   
 }                                                       
-"0x7bdd005e0070_right" -> "0x7bdd005e0130_address";
-subgraph cluster_0x7bdd005e0130                                     
+"0x7b556b3e07d0_right" -> "0x7b556b3e0750_address";
+subgraph cluster_0x7b556b3e0750                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0750_address"[label="0x7b556b3e0750",fillcolor="lavender"];  
+	"0x7b556b3e0750_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0750_value"[label="0",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0750_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0750_address"->"0x7b556b3e0750_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0750_parent"->"0x7b556b3e0750_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0910_right" -> "0x7b556b3e0710_address";
+subgraph cluster_0x7b556b3e0710                                     
 {                                                       
 	style=filled;                                         
 	rank=1;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e0130_address"[label="0x7bdd005e0130",fillcolor="lavender"];  
-	"0x7bdd005e0130_value"[label="/",fillcolor="lavender"];  
-	subgraph "0x7bdd005e0130_bottom"                                
+	"0x7b556b3e0710_address"[label="0x7b556b3e0710",fillcolor="lavender"];  
+	"0x7b556b3e0710_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e0710_value"[label="/",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0710_bottom"                                
 	{                                                     
 		 style=invis;                                       
-		"0x7bdd005e0130_left"[label="0x7bdd005e0160",fillcolor="coral"];      
-		"0x7bdd005e0130_right"[label="0x7bdd005e0190",fillcolor="lightgreen"];
+		"0x7b556b3e0710_left"[label="0x7b556b3e06d0",fillcolor="coral"];      
+		"0x7b556b3e0710_right"[label="0x7b556b3e0310",fillcolor="lightgreen"];
 	}                                                     
-	"0x7bdd005e0130_address"->"0x7bdd005e0130_value"[style=invis,weight=10];  
-	"0x7bdd005e0130_value"->"0x7bdd005e0130_left"[style=invis,weight=10];     
-	"0x7bdd005e0130_value"->"0x7bdd005e0130_right"[style=invis,weight=10];    
+	"0x7b556b3e0710_address"->"0x7b556b3e0710_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0710_parent"->"0x7b556b3e0710_value"[style=invis,weight=10];   
+	"0x7b556b3e0710_value"->"0x7b556b3e0710_left"[style=invis,weight=10];     
+	"0x7b556b3e0710_value"->"0x7b556b3e0710_right"[style=invis,weight=10];    
 }                                                       
-"0x7bdd005e0130_left" -> "0x7bdd005e0160_address";
-subgraph cluster_0x7bdd005e0160                                     
+"0x7b556b3e0710_left" -> "0x7b556b3e06d0_address";
+subgraph cluster_0x7b556b3e06d0                                     
 {                                                       
 	style=filled;                                         
 	rank=2;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e0160_address"[label="0x7bdd005e0160",fillcolor="lavender"];  
-	"0x7bdd005e0160_value"[label="0",fillcolor="lavender"];  
-	subgraph "0x7bdd005e0160_bottom"                                
+	"0x7b556b3e06d0_address"[label="0x7b556b3e06d0",fillcolor="lavender"];  
+	"0x7b556b3e06d0_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e06d0_value"[label="-",fillcolor="lavender"];  
+	subgraph "0x7b556b3e06d0_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e06d0_left"[label="0x7b556b3e0690",fillcolor="coral"];      
+		"0x7b556b3e06d0_right"[label="0x7b556b3e0450",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e06d0_address"->"0x7b556b3e06d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e06d0_parent"->"0x7b556b3e06d0_value"[style=invis,weight=10];   
+	"0x7b556b3e06d0_value"->"0x7b556b3e06d0_left"[style=invis,weight=10];     
+	"0x7b556b3e06d0_value"->"0x7b556b3e06d0_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e06d0_left" -> "0x7b556b3e0690_address";
+subgraph cluster_0x7b556b3e0690                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0690_address"[label="0x7b556b3e0690",fillcolor="lavender"];  
+	"0x7b556b3e0690_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e0690_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0690_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0690_left"[label="0x7b556b3e0650",fillcolor="coral"];      
+		"0x7b556b3e0690_right"[label="0x7b556b3e0610",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0690_address"->"0x7b556b3e0690_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0690_parent"->"0x7b556b3e0690_value"[style=invis,weight=10];   
+	"0x7b556b3e0690_value"->"0x7b556b3e0690_left"[style=invis,weight=10];     
+	"0x7b556b3e0690_value"->"0x7b556b3e0690_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0690_left" -> "0x7b556b3e0650_address";
+subgraph cluster_0x7b556b3e0650                                     
+{                                                       
+	style=filled;                                         
+	rank=4;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0650_address"[label="0x7b556b3e0650",fillcolor="lavender"];  
+	"0x7b556b3e0650_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0650_value"[label="3",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0650_bottom"                                
 	{                                                     
 		 style=invis;                                       
 	}                                                     
-	"0x7bdd005e0160_address"->"0x7bdd005e0160_value"[style=invis,weight=10];  
+	"0x7b556b3e0650_address"->"0x7b556b3e0650_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0650_parent"->"0x7b556b3e0650_value"[style=invis,weight=10];   
 }                                                       
-"0x7bdd005e0130_right" -> "0x7bdd005e0190_address";
-subgraph cluster_0x7bdd005e0190                                     
+"0x7b556b3e0690_right" -> "0x7b556b3e0610_address";
+subgraph cluster_0x7b556b3e0610                                     
+{                                                       
+	style=filled;                                         
+	rank=4;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0610_address"[label="0x7b556b3e0610",fillcolor="lavender"];  
+	"0x7b556b3e0610_parent"[label="prnt: 0x7b556b3e0150",fillcolor="lavender"];  
+	"0x7b556b3e0610_value"[label="+",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0610_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0610_left"[label="0x7b556b3e05d0",fillcolor="coral"];      
+		"0x7b556b3e0610_right"[label="0x7b556b3e0510",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0610_address"->"0x7b556b3e0610_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0610_parent"->"0x7b556b3e0610_value"[style=invis,weight=10];   
+	"0x7b556b3e0610_value"->"0x7b556b3e0610_left"[style=invis,weight=10];     
+	"0x7b556b3e0610_value"->"0x7b556b3e0610_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0610_left" -> "0x7b556b3e05d0_address";
+subgraph cluster_0x7b556b3e05d0                                     
+{                                                       
+	style=filled;                                         
+	rank=5;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e05d0_address"[label="0x7b556b3e05d0",fillcolor="lavender"];  
+	"0x7b556b3e05d0_parent"[label="prnt: 0x7b556b3e0150",fillcolor="lavender"];  
+	"0x7b556b3e05d0_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e05d0_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e05d0_left"[label="0x7b556b3e0590",fillcolor="coral"];      
+		"0x7b556b3e05d0_right"[label="0x7b556b3e0550",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e05d0_address"->"0x7b556b3e05d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e05d0_parent"->"0x7b556b3e05d0_value"[style=invis,weight=10];   
+	"0x7b556b3e05d0_value"->"0x7b556b3e05d0_left"[style=invis,weight=10];     
+	"0x7b556b3e05d0_value"->"0x7b556b3e05d0_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e05d0_left" -> "0x7b556b3e0590_address";
+subgraph cluster_0x7b556b3e0590                                     
+{                                                       
+	style=filled;                                         
+	rank=6;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0590_address"[label="0x7b556b3e0590",fillcolor="lavender"];  
+	"0x7b556b3e0590_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0590_value"[label="X",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0590_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0590_address"->"0x7b556b3e0590_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0590_parent"->"0x7b556b3e0590_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e05d0_right" -> "0x7b556b3e0550_address";
+subgraph cluster_0x7b556b3e0550                                     
+{                                                       
+	style=filled;                                         
+	rank=6;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0550_address"[label="0x7b556b3e0550",fillcolor="lavender"];  
+	"0x7b556b3e0550_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0550_value"[label="1",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0550_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0550_address"->"0x7b556b3e0550_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0550_parent"->"0x7b556b3e0550_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0610_right" -> "0x7b556b3e0510_address";
+subgraph cluster_0x7b556b3e0510                                     
+{                                                       
+	style=filled;                                         
+	rank=5;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0510_address"[label="0x7b556b3e0510",fillcolor="lavender"];  
+	"0x7b556b3e0510_parent"[label="prnt: 0x7b556b3e0150",fillcolor="lavender"];  
+	"0x7b556b3e0510_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0510_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0510_left"[label="0x7b556b3e04d0",fillcolor="coral"];      
+		"0x7b556b3e0510_right"[label="0x7b556b3e0490",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0510_address"->"0x7b556b3e0510_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0510_parent"->"0x7b556b3e0510_value"[style=invis,weight=10];   
+	"0x7b556b3e0510_value"->"0x7b556b3e0510_left"[style=invis,weight=10];     
+	"0x7b556b3e0510_value"->"0x7b556b3e0510_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0510_left" -> "0x7b556b3e04d0_address";
+subgraph cluster_0x7b556b3e04d0                                     
+{                                                       
+	style=filled;                                         
+	rank=6;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e04d0_address"[label="0x7b556b3e04d0",fillcolor="lavender"];  
+	"0x7b556b3e04d0_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e04d0_value"[label="X",fillcolor="lavender"];  
+	subgraph "0x7b556b3e04d0_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e04d0_address"->"0x7b556b3e04d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e04d0_parent"->"0x7b556b3e04d0_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0510_right" -> "0x7b556b3e0490_address";
+subgraph cluster_0x7b556b3e0490                                     
+{                                                       
+	style=filled;                                         
+	rank=6;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0490_address"[label="0x7b556b3e0490",fillcolor="lavender"];  
+	"0x7b556b3e0490_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0490_value"[label="1",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0490_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0490_address"->"0x7b556b3e0490_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0490_parent"->"0x7b556b3e0490_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e06d0_right" -> "0x7b556b3e0450_address";
+subgraph cluster_0x7b556b3e0450                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0450_address"[label="0x7b556b3e0450",fillcolor="lavender"];  
+	"0x7b556b3e0450_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e0450_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0450_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0450_left"[label="0x7b556b3e0410",fillcolor="coral"];      
+		"0x7b556b3e0450_right"[label="0x7b556b3e0350",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0450_address"->"0x7b556b3e0450_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0450_parent"->"0x7b556b3e0450_value"[style=invis,weight=10];   
+	"0x7b556b3e0450_value"->"0x7b556b3e0450_left"[style=invis,weight=10];     
+	"0x7b556b3e0450_value"->"0x7b556b3e0450_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0450_left" -> "0x7b556b3e0410_address";
+subgraph cluster_0x7b556b3e0410                                     
+{                                                       
+	style=filled;                                         
+	rank=4;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0410_address"[label="0x7b556b3e0410",fillcolor="lavender"];  
+	"0x7b556b3e0410_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0410_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0410_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0410_left"[label="0x7b556b3e03d0",fillcolor="coral"];      
+		"0x7b556b3e0410_right"[label="0x7b556b3e0390",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0410_address"->"0x7b556b3e0410_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0410_parent"->"0x7b556b3e0410_value"[style=invis,weight=10];   
+	"0x7b556b3e0410_value"->"0x7b556b3e0410_left"[style=invis,weight=10];     
+	"0x7b556b3e0410_value"->"0x7b556b3e0410_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0410_left" -> "0x7b556b3e03d0_address";
+subgraph cluster_0x7b556b3e03d0                                     
+{                                                       
+	style=filled;                                         
+	rank=5;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e03d0_address"[label="0x7b556b3e03d0",fillcolor="lavender"];  
+	"0x7b556b3e03d0_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e03d0_value"[label="X",fillcolor="lavender"];  
+	subgraph "0x7b556b3e03d0_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e03d0_address"->"0x7b556b3e03d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e03d0_parent"->"0x7b556b3e03d0_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0410_right" -> "0x7b556b3e0390_address";
+subgraph cluster_0x7b556b3e0390                                     
+{                                                       
+	style=filled;                                         
+	rank=5;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0390_address"[label="0x7b556b3e0390",fillcolor="lavender"];  
+	"0x7b556b3e0390_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0390_value"[label="X",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0390_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0390_address"->"0x7b556b3e0390_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0390_parent"->"0x7b556b3e0390_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0450_right" -> "0x7b556b3e0350_address";
+subgraph cluster_0x7b556b3e0350                                     
+{                                                       
+	style=filled;                                         
+	rank=4;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0350_address"[label="0x7b556b3e0350",fillcolor="lavender"];  
+	"0x7b556b3e0350_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0350_value"[label="0",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0350_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0350_address"->"0x7b556b3e0350_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0350_parent"->"0x7b556b3e0350_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0710_right" -> "0x7b556b3e0310_address";
+subgraph cluster_0x7b556b3e0310                                     
 {                                                       
 	style=filled;                                         
 	rank=2;                                              
 	fillcolor=lavender;                                   
-	"0x7bdd005e0190_address"[label="0x7bdd005e0190",fillcolor="lavender"];  
-	"0x7bdd005e0190_value"[label="3",fillcolor="lavender"];  
-	subgraph "0x7bdd005e0190_bottom"                                
+	"0x7b556b3e0310_address"[label="0x7b556b3e0310",fillcolor="lavender"];  
+	"0x7b556b3e0310_parent"[label="prnt: 0x7b556b3e0050",fillcolor="lavender"];  
+	"0x7b556b3e0310_value"[label="*",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0310_bottom"                                
+	{                                                     
+		 style=invis;                                       
+		"0x7b556b3e0310_left"[label="0x7b556b3e02d0",fillcolor="coral"];      
+		"0x7b556b3e0310_right"[label="0x7b556b3e0290",fillcolor="lightgreen"];
+	}                                                     
+	"0x7b556b3e0310_address"->"0x7b556b3e0310_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0310_parent"->"0x7b556b3e0310_value"[style=invis,weight=10];   
+	"0x7b556b3e0310_value"->"0x7b556b3e0310_left"[style=invis,weight=10];     
+	"0x7b556b3e0310_value"->"0x7b556b3e0310_right"[style=invis,weight=10];    
+}                                                       
+"0x7b556b3e0310_left" -> "0x7b556b3e02d0_address";
+subgraph cluster_0x7b556b3e02d0                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e02d0_address"[label="0x7b556b3e02d0",fillcolor="lavender"];  
+	"0x7b556b3e02d0_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e02d0_value"[label="3",fillcolor="lavender"];  
+	subgraph "0x7b556b3e02d0_bottom"                                
 	{                                                     
 		 style=invis;                                       
 	}                                                     
-	"0x7bdd005e0190_address"->"0x7bdd005e0190_value"[style=invis,weight=10];  
+	"0x7b556b3e02d0_address"->"0x7b556b3e02d0_parent"[style=invis,weight=10]; 
+	"0x7b556b3e02d0_parent"->"0x7b556b3e02d0_value"[style=invis,weight=10];   
+}                                                       
+"0x7b556b3e0310_right" -> "0x7b556b3e0290_address";
+subgraph cluster_0x7b556b3e0290                                     
+{                                                       
+	style=filled;                                         
+	rank=3;                                              
+	fillcolor=lavender;                                   
+	"0x7b556b3e0290_address"[label="0x7b556b3e0290",fillcolor="lavender"];  
+	"0x7b556b3e0290_parent"[label="prnt: (nil)",fillcolor="lavender"];  
+	"0x7b556b3e0290_value"[label="3",fillcolor="lavender"];  
+	subgraph "0x7b556b3e0290_bottom"                                
+	{                                                     
+		 style=invis;                                       
+	}                                                     
+	"0x7b556b3e0290_address"->"0x7b556b3e0290_parent"[style=invis,weight=10]; 
+	"0x7b556b3e0290_parent"->"0x7b556b3e0290_value"[style=invis,weight=10];   
 }                                                       
 }

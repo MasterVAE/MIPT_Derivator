@@ -3,7 +3,7 @@
 
 #include "tree.h"
 
-void TreeDotDump(Tree* tree);
-void TreeTexDump(Tree* tree);
+void TreeDotDump(Tree* tree, const char* tree_image);
+void TreeTexDump(Tree* tree, const char* tree_tex);
 
 #endif // TREE_LOGGER_H_
