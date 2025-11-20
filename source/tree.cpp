@@ -2,13 +2,15 @@
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <ctype.h>
 
 #include "tree.h"
 
 static TreeNode* LoadNode(char** buffer, TreeNode* parent = NULL);
-static void NodeDestroy(TreeNode* node);
 static size_t FileLength(FILE* file);
 static size_t Scan(const char* source, char* dest);
+static void SetNodeParent(TreeNode* node, TreeNode* parent);
+static void SkipSpaces(char** buffer);
 
 Tree* CreateTree()
 {
@@ -26,7 +28,7 @@ void TreeDestroy(Tree* tree)
     free(tree);
 }
 
-static void NodeDestroy(TreeNode* node)
+void NodeDestroy(TreeNode* node)
 {
     if(!node) return;
 
@@ -129,7 +131,12 @@ static TreeNode* LoadNode(char** buffer, TreeNode* parent)
             (*buffer)++;
             if((*buffer)[0] == ')') return node;
 
-            node->left = LoadNode(buffer, node);       
+            SkipSpaces(buffer);
+
+            node->left = LoadNode(buffer, node);    
+
+            SkipSpaces(buffer);
+            
             node->right = LoadNode(buffer, node);
 
             (*buffer)++;
@@ -184,7 +191,7 @@ static size_t Scan(const char* source, char* dest)
 {
     char c;
     size_t i = 0;
-    while((c = source[i]) != '(' && c != ')')
+    while((c = source[i]) != '(' && c != ')' && !isspace(c))
     {
         dest[i] = c;
         i++;
@@ -199,5 +206,31 @@ TreeNode* CopyNode(TreeNode* node)
 {
     if(!node) return NULL;
 
-    return CreateNode(node->type, node->value, CopyNode(node->left), CopyNode(node->right));
+    return CreateNode(node->type, node->value, CopyNode(node->left), 
+                                               CopyNode(node->right));
+}
+
+void SetParents(Tree* tree)
+{
+    assert(tree);
+
+    SetNodeParent(tree->root, NULL);
+}
+
+static void SetNodeParent(TreeNode* node, TreeNode* parent)
+{
+    if(!node) return;
+
+    node->parent = parent;
+
+    SetNodeParent(node->left, node);
+    SetNodeParent(node->right, node);
+}
+
+static void SkipSpaces(char** buffer)
+{
+    while(isspace(**buffer))
+    {
+        (*buffer)++;
+    }
 }

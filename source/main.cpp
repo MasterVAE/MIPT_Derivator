@@ -22,6 +22,11 @@ int main()
     TreeTexDump(tree, TREE_TEX_1);
 
     Tree* d_tree = DerivateTree(tree);
+    for(size_t i = 0; i < 5; i++)
+    {
+        OptimiseTree(d_tree);
+    }
+    SetParents(d_tree);
 
     TreeDotDump(d_tree, TREE_IMAGE_2);
     TreeTexDump(d_tree, TREE_TEX_2);

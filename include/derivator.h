@@ -4,6 +4,7 @@
 #include "tree.h"
 
 Tree* DerivateTree(Tree* tree);
-TreeNode* DerivateNode(TreeNode* node, TreeNode* parent);
+TreeNode* DerivateNode(TreeNode* node);
+void OptimiseTree(Tree* tree);
 
 #endif // DERIVATOR_H_

@@ -44,9 +44,11 @@ struct Tree
 
 Tree* CreateTree();
 void TreeDestroy(Tree* tree);
+void NodeDestroy(TreeNode* node);
 TreeNode* CreateNode(NodeType type, NodeValue value, 
                      TreeNode* left = NULL, TreeNode* right = NULL, TreeNode* parent = NULL);
 void LoadTree(Tree* tree, const char* filename);
 TreeNode* CopyNode(TreeNode* node);
+void SetParents(Tree* tree);
 
 #endif // TREE_H_
